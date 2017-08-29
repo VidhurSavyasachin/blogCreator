@@ -1,0 +1,22 @@
+ <% include ../partials/header.ejs %>
+<div class = "container">
+	<h2 style="text-transform: uppercase;">Edit Blog</h2>
+ 		<form action="/dogMain/<%=dogBlog._id%>?_method=PUT" method="POST" style="margin-top: 25px;">
+ 		<div class="thumbnail">
+	<label style="font-family: 'Oswald', sans-serif;text-align: center;font-size: 20px;">Name the dog</label>
+	<input type="text" class="form-control" placeholder="Name of doge" name="dogBlog[names]" value="<%=dogBlog.names%>">
+	<label style="font-family: 'Oswald', sans-serif;text-align: center;font-size: 20px;">Paste the image URL</label>
+	<input type="text" class="form-control" placeholder="Image URL" name="dogBlog[image]" value="<%=dogBlog.image%>">
+	<label style="font-family: 'Oswald', sans-serif;text-align: center;font-size: 20px;">Description about Dog</label>
+	<textarea class="form-control" rows="3" placeholder="About doge" name = "dogBlog[textareas]"><%= dogBlog.textareas%></textarea>
+	<button type="submit" class ="btn btn-success">Edit Blog</button>
+	</div>
+</form>
+
+</div>
+
+
+
+
+
+<% include ../partials/footer.ejs %> 

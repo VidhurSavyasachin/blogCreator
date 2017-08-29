@@ -1,0 +1,23 @@
+<% include ../partials/header.ejs %>
+	<div class="container" style="border-bottom: 1px solid #ced4dd">
+	<h1 style="text-align: center;border-bottom: 1px solid #ced4dd;text-transform: uppercase;font-family: 'Vibur', cursive;"><%= dogBlog.names %></h1>
+ 		<div class="row text-center">
+ 		<img src="<%=dogBlog.image %>" style="width: 600px;height: 400px;border-radius: 80px;">
+ 		</div > 
+ 		<h3 style="font-family: 'Oswald', sans-serif;text-align: center;"><%= dogBlog.textareas%></h3>
+ 	<div class="row text-center">
+ 	<% dogBlog.comments.forEach(function(dogs){ %>
+ 			<p><%= dogs.text%> - <%= dogs.author %></p>
+ 	<% }); %>
+ 	<p>
+ 			<a class = "btn btn-success" href= "/dogMain/<%=dogBlog._id%>/comments/new">Add new Comment</a>
+ 	</p>
+ 		<button class="btn btn-info"><a href="/dogMain/<%=dogBlog._id%>/edit" style="color: inherit;">Edit Blog</a></button>
+<button class ="btn btn-success"><a href="/dogMain" style="color: inherit;">Back to main page </a></button>
+	<form action="/dogMain/<%=dogBlog._id%>?_method=DELETE" method="POST" style="display: inline-block;">
+		<button  class="btn btn-danger">Delete Blog</button>
+	</form>
+	</div>
+	</div>
+
+<% include ../partials/footer.ejs %> 

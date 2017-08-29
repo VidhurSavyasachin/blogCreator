@@ -1,0 +1,14 @@
+<% include ../partials/header.ejs %>
+<div class = "container">
+<h2 style="text-transform: uppercase;">Add new Comment to <%= dogBlog.names %> </h2>
+	<form action="/dogMain/<%=dogBlog._id%>/comments" method="POST" style="margin-top: 25px;">
+		<div class="thumbnail">
+	<label style="font-family: 'Oswald', sans-serif;text-align: center;font-size: 20px;">Name the dog</label>
+	<input type="text" class="form-control" placeholder="text" name=CommentS[text]>
+	<label style="font-family: 'Oswald', sans-serif;text-align: center;font-size: 20px;">Paste the image URL</label>
+	<input type="text" class="form-control" placeholder="Author" name="CommentS[author]">
+	<button type="submit" class ="btn btn-success">Submit</button>
+	</div>
+</form>
+</div>
+<% include ../partials/footer.ejs %> 

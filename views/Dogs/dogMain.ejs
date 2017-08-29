@@ -1,0 +1,29 @@
+<% include ../partials/header.ejs %>
+ <ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation"><a href="/dogMain/new">Create Blog</a></li>
+
+</ul>
+ 	<% dogBlog.forEach(function(dogs){ %>
+ 	<div class="container" style="border-bottom: 1px solid #ced4dd">
+		 		<div class="row">
+					  <div class="col-md-6">
+					  
+					  		
+ 		<h1 style="text-align: center;border-bottom: 1px solid #ced4dd;text-transform: uppercase;font-family: 'Vibur', cursive;"><%= dogs.names %></h1>
+ 	<div class="row text-center">
+ 		<img src="<%=dogs.image %>" style="width: 500px;height: 500px;opacity: 0.9;border-radius: 80px; ">
+ 	</div>
+ 		<h3 style="font-family: 'Oswald', sans-serif;text-align: center;"><%= dogs.textareas.substring(0,70)%>...
+ 		<a href="/dogMain/<%=dogs._id%>">Read More</a></h3>
+					  </div>
+					  
+				</div>
+
+ 	</div>
+ 	<%});%>
+
+ 
+
+
+<% include ../partials/footer.ejs %> 
